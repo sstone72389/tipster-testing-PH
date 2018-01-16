@@ -19,14 +19,15 @@
   <script type="text/javascript" src="./dist/js/tooltipster.bundle.min.js"></script>
 
   <script>
-  $(document).ready(function() {
-          $('.tooltip').tooltipster({
-            animation: 'fade',
-            theme: ['tooltipster-borderless', 'tooltipster-borderless-customized'],
-            maxWidth: 450,
-            contentCloning: true
-          });
+    $(document).ready(function() {
+      $('.tooltip').tooltipster({
+        animation: 'fade',
+        theme: ['tooltipster-borderless', 'tooltipster-borderless-customized'],
+        maxWidth: 450,
+        contentCloning: true,
+        interactive: true
       });
+    });
   </script>
 
 </head>
@@ -35,19 +36,20 @@
 
   <!-- Both of the below examples use content from the tooltip_templates class. They can be hard coded as well -->
   <h1 style="font-family:verdana;text-align:center;" class="tooltip" title="Of course I have a tooltip. I use the title attribute instead of a data-tooltip-content attrubute, but that means I can only be text :-( Check out my friends though.">Tooltipster testing</h1>
-<br />
+  <br />
 
-<br />
+  <br />
 
-<br />
-  <img id="example" style="width:30px;" src="http://res.cloudinary.com/dfu4pwocw/image/upload/v1515767882/info-tt_b2wjbj.png" class="tooltip" data-tooltip-content="#tooltip_content"/>
+  <br />
+  <img id="example" style="width:30px;" src="http://res.cloudinary.com/dfu4pwocw/image/upload/v1515767882/info-tt_b2wjbj.png" class="tooltip" data-tooltip-content="#tooltip_content" />
 
 
-  <img style="width:30px;float:right;" src="http://res.cloudinary.com/dfu4pwocw/image/upload/v1515767882/info-tt_b2wjbj.png" class="tooltip" data-tooltip-content="<p><strong><em>Hello!</em></strong> I am a tooltip with HTML hard coded! Please use this data-attribute to ensure I am rendered correctly</p>"/>
+  <img style="width:30px;float:right;" src="http://res.cloudinary.com/dfu4pwocw/image/upload/v1515767882/info-tt_b2wjbj.png" class="tooltip" data-tooltip-content="<p><strong><em>Hello!</em></strong> I am a tooltip with HTML hard coded! Please use this data-attribute to ensure I am rendered correctly</p>"
+  />
 
 
   <div style="text-align:center;">
-  <span style="background:red;color:white;font-family:verdana;" class="tooltip" data-tooltip-content="#tooltip_content">I have one toooo!</span>
+    <span style="background:red;color:white;font-family:verdana;" class="tooltip" data-tooltip-content="#tooltip_content">I have one toooo!</span>
   </div>
 
 
@@ -59,7 +61,7 @@
 
       <p>P.S. I am saved in a content template and am rendering HTML elements!</p>
     </span>
-</div>
+  </div>
 
 </body>
 
