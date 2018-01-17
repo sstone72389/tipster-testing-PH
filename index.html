@@ -40,6 +40,12 @@
           tap: true
         }
       });
+
+      // as soon as a key is pressed on the keyboard, close the tooltip.
+   $(window).keypress(function() {
+      $('.tooltip').tooltipster('close');
+   });
+
     });
   </script>
 
