@@ -27,18 +27,18 @@
         maxWidth: 450,
         contentCloning: true,
         interactive: true,
-        trigger: 'hover'
+        trigger: 'custom',
 
-        // Custom triggers can be used if needed.
+        // Custom triggers can be used if needed. The below example sets triggers for both desktop and touch/hybrid devices.
 
-        // triggerOpen: {
-        //   mouseenter: true,
-        //   tap: true
-        // },
-        // triggerClose: {
-        //   mouseLeave: true,
-        //   tap: true
-        // }
+        triggerOpen: {
+          mouseenter: true,
+          tap: true
+        },
+        triggerClose: {
+          mouseleave: true,
+          tap: true
+        }
       });
     });
   </script>
