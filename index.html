@@ -33,18 +33,20 @@
         //     origin.hide();
         // });
         // },
-        trigger: 'click'
+        trigger: 'custom',
 
         // Custom triggers can be used if needed. The below example sets triggers for both desktop and touch/hybrid devices.
 
-        // triggerOpen: {
-        //   mouseenter: true,
-        //   tap: true
-        // },
-        // triggerClose: {
-        //   mouseleave: true,
-        //   tap: true
-        // }
+        triggerOpen: {
+          originClick: true,
+          mouseenter: true,
+          tap: true
+        },
+        triggerClose: {
+          mouseleave: true,
+          tap: true,
+          touchleave: true
+        }
       });
 
       // as soon as a key is pressed on the keyboard, close the tooltip.
@@ -55,14 +57,14 @@
       // prevents click inside of tooltip from closing by default
 
 
-      $('.tooltip').click(function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-      });
-
-      $(document).on('click', function() {
-        $('.tooltip').tooltipster('close');
-      });
+      // $(document).on('click', function() {
+      //   $('.tooltip').tooltipster('close');
+      // });
+      //
+      // $('.tooltip').click(function(event) {
+      //   event.preventDefault();
+      //   event.stopPropagation();
+      // });
 
 
 
