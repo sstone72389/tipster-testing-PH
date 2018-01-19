@@ -50,11 +50,14 @@
       });
 
       // as soon as a key is pressed on the keyboard, close the tooltip.
-      $(window).keypress(function() {
-        $('.tooltip').tooltipster('close');
-      });
+      // uneeded in current state of "hover" for desktop devices. Useful if trigger changed to click to allow keyboard interaction
+
+      // $(window).keypress(function() {
+      //   $('.tooltip').tooltipster('close');
+      // });
 
       // prevents click inside of tooltip from closing by default
+      // deemed uneeded, as custom triggers appear to support touch devices perfectly. Saved for potential refactor in case the need for even more customization becomes necessary.
 
 
       // $(document).on('click', function() {
@@ -62,12 +65,12 @@
       // });
       //
       // $('.tooltip').click(function(event) {
-      //   event.preventDefault();
       //   event.stopPropagation();
       // });
 
 
-
+      // does same as above
+      
       // $(document).click(function(event) {
       //   if ($(event.target).is('.tooltipster')) {
       //     return false;
