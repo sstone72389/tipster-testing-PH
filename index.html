@@ -21,41 +21,56 @@
   <script>
     // this plugin uses jQuery and has a bunch of customizable options. The below code uses a custom theme and allows interactivity with the tooltip in the case that a user would like to copy and paste information from the info tip
     $(document).ready(function() {
-          $('.tooltip').tooltipster({
-            animation: 'fade',
-            theme: ['tooltipster-borderless', 'tooltipster-borderless-customized'],
-            maxWidth: 450,
-            contentCloning: true,
-            interactive: true,
-            functionReady: function(origin, tooltip) {
-            tooltip.on("click", function() {
-                origin.hide();
-            });
+      $('.tooltip').tooltipster({
+        animation: 'fade',
+        theme: ['tooltipster-borderless', 'tooltipster-borderless-customized'],
+        maxWidth: 450,
+        contentCloning: true,
+        interactive: true,
+
+        // functionReady: function(origin) {
+        // $('body').on("click", function() {
+        //     origin.hide();
+        // });
+        // },
+        trigger: 'custom',
+
+        // Custom triggers can be used if needed. The below example sets triggers for both desktop and touch/hybrid devices.
+
+        triggerOpen: {
+          mouseenter: true,
+          tap: true
         },
-            trigger: 'custom',
+        triggerClose: {
+          mouseleave: true,
+          tap: true
+        }
+      });
 
-            // Custom triggers can be used if needed. The below example sets triggers for both desktop and touch/hybrid devices.
+      // as soon as a key is pressed on the keyboard, close the tooltip.
+      $(window).keypress(function() {
+        $('.tooltip').tooltipster('close');
+      });
 
-            triggerOpen: {
-              mouseenter: true,
-              tap: true
-            },
-            triggerClose: {
-              mouseleave: true,
-              tap: true
-            }
-          });
 
-          // as soon as a key is pressed on the keyboard, close the tooltip.
-          $(window).keypress(function() {
-            $('.tooltip').tooltipster('close');
-          });
+      // attempting to detect click outside of element: no vail thus far
+      // $(document).on('click', function(event) {
+      //   if (!$(event.target).closest('.tooltip').length) {
+      //     alert("outside");
+      //   }
+      // });
 
-          // $(document).on('click', function() {
-          //   $('.tooltip').tooltipster('close');
-          // });
 
-          });
+      // prevents click inside of tooltip from closing by default
+      $('.tooltip').click(function(event) {
+        event.stopPropagation();
+      });
+
+      $(document).on('click', function() {
+        $('.tooltip').tooltipster('close');
+      });
+
+    });
   </script>
 
 </head>
