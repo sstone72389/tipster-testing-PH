@@ -53,14 +53,22 @@
       });
 
       // prevents click inside of tooltip from closing by default
-      $('.tooltip').click(function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-      });
+      // $('.tooltip').click(function(event) {
+      //   event.preventDefault();
+      //   event.stopPropagation();
+      // });
 
-      $(document).on('click', function() {
+      // $(document).on('click', function() {
+      //   $('.tooltip').tooltipster('close');
+      // });
+
+      $(document).click(function(event) {
+    if ($(event.target).is('.tooltip')) {
+        return false;
+    } else {
         $('.tooltip').tooltipster('close');
-      });
+    }
+});
 
     });
   </script>
