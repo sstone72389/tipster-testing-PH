@@ -85,6 +85,7 @@
 <body>
 
   <!-- This example only uses a title. No HTML can be added for that, just text(strings). -->
+  <div style="height:800px;border:1px solid red;" class="container">
   <h1 style="font-family:verdana;text-align:center;" class="tooltip" title="Of course I have a tooltip. I use the title attribute instead of a data-tooltip-content attrubute, but that means I can only be text :-( Check out my friends though.">Tooltipster testing</h1>
   <br />
 
@@ -93,6 +94,7 @@
   <br />
 
   <!-- below example uses content from the tooltip_templates class. They can be hard coded as well -->
+
   <img id="example" style="width:30px;" src="http://res.cloudinary.com/dfu4pwocw/image/upload/v1515767882/info-tt_b2wjbj.png" class="tooltip" data-tooltip-content="#tooltip_content" />
 
   <!-- This example is hard coded using the same attribute which allows html -->
@@ -101,6 +103,8 @@
   <!-- below example uses content from the tooltip_templates class. They can be hard coded as well -->
   <div style="text-align:center;">
     <span style="background:red;color:white;font-family:verdana;" class="tooltip" data-tooltip-content="#tooltip_content">I have one toooo!</span>
+  </div>
+
   </div>
 
   <!-- This is the template used for the two notated examples above. Please note that contentCloning: true must be added to the JS to use the same template in more than one case. Also, this div must be hidden with display none in order to prevent visibility upon page load. -->
