@@ -52,17 +52,9 @@
         $('.tooltip').tooltipster('close');
       });
 
-
-      // attempting to detect click outside of element: no vail thus far
-      // $(document).on('click', function(event) {
-      //   if (!$(event.target).closest('.tooltip').length) {
-      //     alert("outside");
-      //   }
-      // });
-
-
       // prevents click inside of tooltip from closing by default
       $('.tooltip').click(function(event) {
+        event.preventDefault();
         event.stopPropagation();
       });
 
